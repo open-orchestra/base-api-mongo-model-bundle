@@ -1,2 +1,0 @@
-resolve_target_documents:
-    OpenOrchestra\BaseApi\Model\ApiClientInterface: OpenOrchestra\BaseApiModelBundle\Document\ApiClient

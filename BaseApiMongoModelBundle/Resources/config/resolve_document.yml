@@ -1,0 +1,2 @@
+resolve_target_documents:
+    OpenOrchestra\BaseApi\Model\ApiClientInterface: OpenOrchestra\BaseApiMongoModelBundle\Document\ApiClient

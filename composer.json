@@ -1,17 +1,16 @@
 {
-    "name": "open-orchestra/open-orchestra-base-api-bundle",
-    "description": "This bundle provide the base bricks for the OpenOrchestra Api",
+    "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
+    "description": "This bundle provide the base Model for an OpenOrchestra Api based on Mongo",
     "license": "Apache-2.0",
     "authors": [
         {
             "name": "OpenOrchestra community",
-            "homepage": "https://github.com/open-orchestra/open-orchestra-base-api-bundle/graphs/contributors"
+            "homepage": "https://github.com/open-orchestra/open-orchestra-base-api-mongo-model-bundle/graphs/contributors"
         }
     ],
     "minimum-stability": "dev",
     "require": {
-        "jms/serializer-bundle" : "1.0.0",
-        "open-orchestra/open-orchestra-base-bundle": "*",
+        "open-orchestra/open-orchestra-base-api-bundle": "*",
         "open-orchestra/open-orchestra-libs": "*",
         "solution/mongo-odm-aggregation-bundle": "*"
     },
@@ -26,9 +25,7 @@
     },
     "autoload": {
         "psr-0": {
-            "OpenOrchestra\\BaseApiModelBundle": "",
-            "OpenOrchestra\\BaseApiBundle": "",
-            "OpenOrchestra\\BaseApi": ""
+            "OpenOrchestra\\BaseApiMongoModelBundle": ""
         }
     },
     "target-dir": "OpenOrchestra"
