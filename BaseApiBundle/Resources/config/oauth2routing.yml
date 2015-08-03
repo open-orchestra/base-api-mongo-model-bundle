@@ -1,4 +1,0 @@
-open_orchestra_api_authorization_access_token:
-    path:  /oauth/access_token
-    defaults: { _controller: OpenOrchestraBaseApiBundle:Authorization:accessToken }
-    methods:  [GET]

@@ -25,4 +25,4 @@ install:
 script: ./bin/phpunit
 
 after_script:
-  - CODECLIMATE_REPO_TOKEN=e21a828679a86ff0c9889b37a8779050005cd0ae499f787785280214c2fbf30b ./bin/test-reporter
+  - CODECLIMATE_REPO_TOKEN=09f42fadc598b61e923c32f5ce03cf22f166bd011c8743b93b6b68e3c919b821 ./bin/test-reporter
