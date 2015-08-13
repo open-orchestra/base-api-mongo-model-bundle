@@ -6,6 +6,7 @@ use OpenOrchestra\BaseApi\Model\ApiClientInterface;
 use OpenOrchestra\BaseApi\Model\TokenInterface;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\ConstraintViolationListInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
@@ -34,6 +35,13 @@ class AccessToken implements TokenInterface
     protected $code;
 
     /**
+     * @var string $code
+     *
+     * @ODM\Field(type="string")
+     */
+    protected $refreshCode;
+
+    /**
      * @var UserInterface $user
      *
      * @ODM\ReferenceOne(targetDocument="Symfony\Component\Security\Core\User\UserInterface")
@@ -52,12 +60,15 @@ class AccessToken implements TokenInterface
      */
     protected $createdAt;
 
+    protected $violations;
+
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->code = $this->generateId();
+        $this->refreshCode = $this->generateId();
         $this->createdAt = new \DateTime();
     }
 
@@ -106,6 +117,22 @@ class AccessToken implements TokenInterface
     }
 
     /**
+     * @return string
+     */
+    public function getRefreshCode()
+    {
+        return $this->refreshCode;
+    }
+
+    /**
+     * @param string $refreshCode
+     */
+    public function setRefreshCode($refreshCode)
+    {
+        $this->refreshCode = $refreshCode;
+    }
+
+    /**
      * @param UserInterface $user
      */
     public function setUser(UserInterface $user = null)
@@ -151,8 +178,16 @@ class AccessToken implements TokenInterface
      */
     public function isValid(ValidatorInterface $validator)
     {
-        $violations = $validator->validate($this);
+        $this->violations = $validator->validate($this);
 
-        return 0 === count($violations);
+        return 0 === count($this->violations);
+    }
+
+    /**
+     * @return ConstraintViolationListInterface
+     */
+    public function getViolations()
+    {
+        return $this->violations;
     }
 }

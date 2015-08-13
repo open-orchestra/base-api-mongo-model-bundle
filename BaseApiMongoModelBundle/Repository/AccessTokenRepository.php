@@ -21,9 +21,26 @@ class AccessTokenRepository extends AbstractAggregateRepository implements Acces
     {
         $qb = $this->createQueryBuilder();
 
-        $qb->field('client.$id')->equals($client->getId());
+        $qb->field('client.id')->equals($client->getId());
         $qb->field('user')->equals(null);
         $qb->sort('createdAt', 'desc');
+        $qb->limit(1);
+
+        return $qb->getQuery()->getSingleResult();
+    }
+
+    /**
+     * @param ApiClientInterface $client
+     * @param string $refreshToken
+     *
+     * @return TokenInterface
+     */
+    public function findOneByClientAndRefreshToken(ApiClientInterface $client, $refreshToken)
+    {
+        $qb = $this->createQueryBuilder();
+
+        $qb->field('client.id')->equals($client->getId());
+        $qb->field('refreshCode')->equals($refreshToken);
         $qb->limit(1);
 
         return $qb->getQuery()->getSingleResult();
