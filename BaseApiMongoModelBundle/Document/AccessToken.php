@@ -34,6 +34,13 @@ class AccessToken implements TokenInterface
     protected $code;
 
     /**
+     * @var string $code
+     *
+     * @ODM\Field(type="string")
+     */
+    protected $refreshCode;
+
+    /**
      * @var UserInterface $user
      *
      * @ODM\ReferenceOne(targetDocument="Symfony\Component\Security\Core\User\UserInterface")
@@ -58,6 +65,7 @@ class AccessToken implements TokenInterface
     public function __construct()
     {
         $this->code = $this->generateId();
+        $this->refreshCode = $this->generateId();
         $this->createdAt = new \DateTime();
     }
 
@@ -103,6 +111,22 @@ class AccessToken implements TokenInterface
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRefreshCode()
+    {
+        return $this->refreshCode;
+    }
+
+    /**
+     * @param string $refreshCode
+     */
+    public function setRefreshCode($refreshCode)
+    {
+        $this->refreshCode = $refreshCode;
     }
 
     /**
