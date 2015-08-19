@@ -46,6 +46,11 @@ class ApiClient implements ApiClientInterface
     protected $trusted;
 
     /**
+     * @ODM\Field(type="collection")
+     */
+    protected $roles = array();
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -136,5 +141,52 @@ class ApiClient implements ApiClientInterface
     public function setTrusted($trusted)
     {
         $this->trusted = $trusted;
+    }
+
+    /**
+     * @param string $role
+     */
+    public function addRole($role)
+    {
+        $role = strtoupper($role);
+
+        if (!in_array($role, $this->roles, true)) {
+            $this->roles[] = $role;
+        }
+    }
+
+    /**
+     * Returns the user roles
+     *
+     * @return array The roles
+     */
+    public function getRoles()
+    {
+        $roles = $this->roles;
+
+        return array_unique($roles);
+    }
+
+    /**
+     * @param array $roles
+     */
+    public function setRoles(array $roles)
+    {
+        $this->roles = array();
+
+        foreach ($roles as $role) {
+            $this->addRole($role);
+        }
+    }
+
+    /**
+     * @param $role
+     */
+    public function removeRole($role)
+    {
+        if (false !== $key = array_search(strtoupper($role), $this->roles, true)) {
+            unset($this->roles[$key]);
+            $this->roles = array_values($this->roles);
+        }
     }
 }
