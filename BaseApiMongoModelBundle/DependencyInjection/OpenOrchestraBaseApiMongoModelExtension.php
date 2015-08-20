@@ -41,9 +41,11 @@ class OpenOrchestraBaseApiMongoModelExtension extends Extension
                     $definition->addMethodCall('setAggregationQueryBuilder', array(
                         new Reference('doctrine_mongodb.odm.default_aggregation_query')
                     ));
-                    $definition->addMethodCall('setFilterTypeManager', array(
-                        new Reference('open_orchestra_pagination.filter_type.manager')
-                    ));
+                    if (method_exists($content['repository'],'setFilterTypeManager')) {
+                        $definition->addMethodCall('setFilterTypeManager', array(
+                            new Reference('open_orchestra_pagination.filter_type.manager')
+                        ));
+                    }
                     $container->setDefinition('open_orchestra_api.repository.' . $class, $definition);
                 }
             }
