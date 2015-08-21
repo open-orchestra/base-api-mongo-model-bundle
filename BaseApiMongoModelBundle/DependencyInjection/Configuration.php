@@ -21,14 +21,6 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('open_orchestra_base_api_model');
 
         $rootNode->children()
-            ->arrayNode('factory')
-                ->beforeNormalization()
-                    ->ifTrue(function($v) { return $v === null; })
-                    ->then(function($v) { return array(); })
-                ->end()
-                ->prototype('scalar')->end()
-                ->defaultValue(array())
-            ->end()
             ->arrayNode('document')
                 ->addDefaultsIfNotSet()
                 ->children()

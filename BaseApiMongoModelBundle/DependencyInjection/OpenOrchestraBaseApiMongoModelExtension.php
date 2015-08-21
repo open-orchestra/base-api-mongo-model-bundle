@@ -22,15 +22,7 @@ class OpenOrchestraBaseApiMongoModelExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $factoryService = null;
-        $factory = $config['factory'];
-        if (count($factory) > 0) {
-            $factoryService = $factory[0];
-        }
-
-        if (is_null($factoryService) && class_exists('Doctrine\ODM\MongoDB\DocumentManager')) {
-            $factoryService = 'doctrine.odm.mongodb.document_manager';
-        }
+        $factoryService = 'object_manager';
 
         foreach ($config['document'] as $class => $content) {
             if (is_array($content)) {
@@ -50,7 +42,5 @@ class OpenOrchestraBaseApiMongoModelExtension extends Extension
                 }
             }
         }
-
-        $container->setAlias('object_manager', $factoryService);
     }
 }
