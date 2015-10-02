@@ -11,7 +11,6 @@
     "minimum-stability": "dev",
     "require": {
         "open-orchestra/open-orchestra-base-api-bundle": "*",
-        "open-orchestra/open-orchestra-libs": "*",
         "solution/mongo-odm-aggregation-bundle": "*"
     },
     "require-dev": {
