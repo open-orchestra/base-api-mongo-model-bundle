@@ -24,9 +24,8 @@
         "bin-dir" : "bin"
     },
     "autoload": {
-        "psr-0": {
-            "OpenOrchestra\\BaseApiMongoModelBundle": ""
+        "psr-4": {
+            "OpenOrchestra\\BaseApiMongoModelBundle\\": "BaseApiMongoModelBundle/"
         }
-    },
-    "target-dir": "OpenOrchestra"
+    }
 }
