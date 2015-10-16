@@ -1,0 +1,9 @@
+open_orchestra_base_api_mongo_model:
+    document:
+        api_client:
+            class: FakeClassApiClient
+            repository: FakeRepositoryApiClient
+        access_token:
+            class: FakeClassAccessToken
+            repository: FakeRepositoryAccesToken
+
