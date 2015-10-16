@@ -6,4 +6,3 @@ open_orchestra_base_api_mongo_model:
         access_token:
             class: FakeClassAccessToken
             repository: FakeRepositoryAccesToken
-
