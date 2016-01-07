@@ -3,6 +3,7 @@
 namespace OpenOrchestra\BaseApiBundle\DependencyInjection;
 
 use OpenOrchestra\BaseApiMongoModelBundle\DependencyInjection\OpenOrchestraBaseApiMongoModelExtension;
+use OpenOrchestra\BaseBundle\Tests\AbstractTest\AbstractBaseTestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Definition;
@@ -11,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 /**
  * Class OpenOrchestraBaseApiMongoModelExtensionTest
  */
-class OpenOrchestraBaseApiMongoModelExtensionTest extends \PHPUnit_Framework_TestCase
+class OpenOrchestraBaseApiMongoModelExtensionTest extends AbstractBaseTestCase
 {
     /**
      * @param string $className
