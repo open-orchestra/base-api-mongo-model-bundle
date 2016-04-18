@@ -1,30 +1,34 @@
 {
-    "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
-    "description": "This bundle provide the base Model for an OpenOrchestra Api based on Mongo",
-    "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "OpenOrchestra community",
-            "homepage": "https://github.com/open-orchestra/open-orchestra-base-api-mongo-model-bundle/graphs/contributors"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "open-orchestra/open-orchestra-base-api-bundle": "*",
-        "open-orchestra/open-orchestra-mongo-libs": "*"
-    },
-    "require-dev": {
-        "phpunit/phpunit" : "4.7.2",
-        "psr/log": "1.0.0",
-        "codeclimate/php-test-reporter": "dev-master",
-        "phake/phake": "2.1.0"
-    },
-    "config" : {
-        "bin-dir" : "bin"
-    },
-    "autoload": {
-        "psr-4": {
-            "OpenOrchestra\\BaseApiMongoModelBundle\\": "BaseApiMongoModelBundle/"
-        }
+  "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
+  "description": "This bundle provide the base Model for an OpenOrchestra Api based on Mongo",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "OpenOrchestra community",
+      "homepage": "https://github.com/open-orchestra/open-orchestra-base-api-mongo-model-bundle/graphs/contributors"
     }
+  ],
+  "require": {
+    "open-orchestra/open-orchestra-base-api-bundle": "1.1.*@dev",
+    "open-orchestra/open-orchestra-mongo-libs": "1.1.*@dev"
+  },
+  "require-dev": {
+    "phpunit/phpunit" : "4.7.2",
+    "psr/log": "1.0.0",
+    "codeclimate/php-test-reporter": "dev-master",
+    "phake/phake": "2.1.0"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.1.x-dev"
+    }
+  },
+  "config" : {
+    "bin-dir" : "bin"
+  },
+  "autoload": {
+    "psr-4": {
+      "OpenOrchestra\\BaseApiMongoModelBundle\\": "BaseApiMongoModelBundle/"
+    }
+  }
 }
