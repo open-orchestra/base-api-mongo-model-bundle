@@ -1,6 +1,6 @@
 {
   "name": "open-orchestra/open-orchestra-base-api-mongo-model-bundle",
-  "description": "This bundle provide the base Model for an OpenOrchestra Api based on Mongo",
+  "description": "This bundle provide the MongoDB implementation of the Open Orchestra base api bundle",
   "license": "Apache-2.0",
   "authors": [
     {
@@ -12,8 +12,6 @@
     "open-orchestra/open-orchestra-base-api-bundle": "1.1.*@dev",
     "open-orchestra/open-orchestra-mongo-libs": "1.1.*@dev",
 
-    "solution/mongo-odm-aggregation-bundle": "@dev",
-    "solution/pipeline-builder": "@dev",
     "open-orchestra/open-orchestra-libs": "@dev",
     "open-orchestra/open-orchestra-base-bundle": "@dev"
   },
