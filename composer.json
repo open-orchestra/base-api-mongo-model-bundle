@@ -9,14 +9,22 @@
     }
   ],
   "require": {
-    "open-orchestra/open-orchestra-base-api-bundle": "1.1.1",
-    "open-orchestra/open-orchestra-mongo-libs": "1.1.1"
+    "open-orchestra/open-orchestra-base-api-bundle": "1.1.*@dev",
+    "open-orchestra/open-orchestra-mongo-libs": "1.1.*@dev",
+
+    "open-orchestra/open-orchestra-libs": "@dev",
+    "open-orchestra/open-orchestra-base-bundle": "@dev"
   },
   "require-dev": {
     "phpunit/phpunit" : "4.7.2",
     "psr/log": "1.0.0",
     "codeclimate/php-test-reporter": "dev-master",
     "phake/phake": "2.1.0"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.1.x-dev"
+    }
   },
   "config" : {
     "bin-dir" : "bin"
