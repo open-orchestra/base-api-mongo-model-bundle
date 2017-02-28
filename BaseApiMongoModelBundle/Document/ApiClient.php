@@ -4,7 +4,6 @@ namespace OpenOrchestra\BaseApiMongoModelBundle\Document;
 
 use OpenOrchestra\BaseApi\Model\ApiClientInterface;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
-use OpenOrchestra\Mapping\Annotations as ORCHESTRA;
 
 /**
  * Class ApiClient
@@ -35,13 +34,11 @@ class ApiClient implements ApiClientInterface
 
     /**
      * @ODM\Field(type="string")
-     * @ORCHESTRA\Search(key="name")
      */
     protected $name;
 
     /**
      * @ODM\Field(type="boolean")
-     * @ORCHESTRA\Search(key="trusted", type="boolean")
      */
     protected $trusted;
 
