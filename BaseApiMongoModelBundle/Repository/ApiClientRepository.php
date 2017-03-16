@@ -4,7 +4,6 @@ namespace OpenOrchestra\BaseApiMongoModelBundle\Repository;
 
 use OpenOrchestra\BaseApi\Model\ApiClientInterface;
 use OpenOrchestra\BaseApi\Repository\ApiClientRepositoryInterface;
-use OpenOrchestra\Pagination\MongoTrait\PaginationTrait;
 use OpenOrchestra\Repository\AbstractAggregateRepository;
 
 
@@ -13,8 +12,6 @@ use OpenOrchestra\Repository\AbstractAggregateRepository;
  */
 class ApiClientRepository extends AbstractAggregateRepository implements ApiClientRepositoryInterface
 {
-    use PaginationTrait;
-
     /**
      * @param string $key
      * @param string $secret
