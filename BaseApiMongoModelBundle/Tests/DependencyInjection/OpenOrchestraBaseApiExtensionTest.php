@@ -36,7 +36,7 @@ class OpenOrchestraBaseApiMongoModelExtensionTest extends AbstractBaseTestCase
     public function provideDocumentClass()
     {
         return array(
-            array("ApiClient", "api_client", true),
+            array("ApiClient", "api_client"),
             array("AccessToken", "access_token")
         );
     }
