@@ -6,11 +6,12 @@ cache:
 
 php:
   - 5.6
+  - 7.0
 
 sudo: false
 
 before_install:
-  - phpenv config-add .travis.php.ini
+  - cp .travis.php_$(phpenv version-name).ini ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
 install:
   - export COMPOSER_ROOT_VERSION=dev-master
